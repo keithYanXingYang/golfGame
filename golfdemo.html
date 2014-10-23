@@ -1,0 +1,124 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title></title>
+
+<SCRIPT type="text/javascript">
+	
+
+	function getUserInfo() {
+		
+		return "<element><loginname>test1</loginname><querydate>2014/10/21 15:21:00</querydate><totalTimes>4</totalTimes><leftTimes>2</leftTimes></element>";
+	}
+	function getServerUrl() {
+	
+		return "http://10.5.5.41:8080";
+	}
+
+	</SCRIPT>
+</head>
+<body>
+
+
+
+<div id="div_load" style="display:; position:absolute;left: 300px; top: 230px;z-index:-10000">
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font 
+	 color="yellow" size="4">数据加载中,请稍候...</font>
+	<br/><br/><img src="images/loading.gif"/>
+	</div>
+	<div id="div_flash" ></div>
+
+	<SCRIPT type="text/javascript">
+	//as与js交互
+	function thisMovie(movieName) {
+	  if (navigator.appName.indexOf("Microsoft") != -1) {
+	      return window[movieName];
+	  } else {
+	      return document[movieName];
+	  }
+	}
+	
+	<!--
+	// U can change this number to check specific version of flash
+	var MM_contentVersion = 9;
+	
+	var plugin = (navigator.mimeTypes && navigator.mimeTypes["application/x-shockwave-flash"]) ?
+	                     navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin : 0;
+	if ( plugin ) {
+		var words = navigator.plugins["Shockwave Flash"].description.split(" ");
+	    for (var i = 0; i < words.length; ++i){
+	        if (isNaN(parseInt(words[i])))
+	            continue;
+	        var MM_PluginVersion = words[i]; 
+	    }
+	    var MM_FlashCanPlay = MM_PluginVersion >= MM_contentVersion;
+	}
+	else if( navigator.userAgent && navigator.userAgent.indexOf("MSIE")>=0 && 
+	        (navigator.appVersion.indexOf("MSIE") != -1) ) {
+	    //FS hide this from IE4.5 Mac by splitting the tag
+	    try
+	    {
+	    	var axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash");
+	    }
+	    catch(oException)
+	    {
+	    }
+	    if(axo)
+	    {
+		    var version=axo.GetVariable("$version");
+		    var index=version.indexOf(" ")+1;
+		    var verArr = version.substring(index,version.length).split(",");
+		    MM_FlashCanPlay = false;
+	        if (parseInt(verArr[0]) > MM_contentVersion)
+	        {
+	        	MM_FlashCanPlay = true;
+	        }
+	        else if (parseInt(verArr[1]) > 0 && parseInt(verArr[0]) == MM_contentVersion)
+	        {
+	        	MM_FlashCanPlay = true;
+	        }
+	        else if (parseInt(verArr[2]) >= 115 && parseInt(verArr[0]) == MM_contentVersion)
+	        {
+	        	MM_FlashCanPlay = true;
+	        }
+		}
+		else
+		{
+			MM_FlashCanPlay = false;
+		}
+	}
+	if ( !MM_FlashCanPlay ) {
+	  var jinggao=document.frmgame.jinggao.value;
+	  alert(jinggao);
+	  div_getPlayer.style.display = "";
+	  div_load.style.display = "none";
+	  //window.open("http://www.macromedia.com/go/getflashplayer");
+	}
+	else {
+		var str = "";
+		var url = "flash/DrawLottery.swf";
+		var flashId = url.slice(0, url.length - 4);
+		str = " <object classid=\"clsid:d27cdb6e-ae6d-11cf-96b8-444553540000\" codebase=\"https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,115,0\" width=\"100%\" height=\"100%\" id=\""+flashId+"\" align=\"left\">";
+		str += "<param name=\"FlashVars\" value=\"swfurl=/drawgame/\" />";
+		str += "<param name=\"allowScriptAccess\" value=\"always\" />";
+		str += "<param name=\"allowFullScreen\" value=\"true\" />";
+		str += "<param name=\"movie\" value=\""+url+"\" />";
+		str += "<param name=\"quality\" value=\"high\" />";
+		str += "<param name=\"bgcolor\" value=\"#000000\" />";
+		str += "<embed src=\""+url+"\" quality=\"high\" bgcolor=\"#000000\" width=\"100%\" height=\"100%\" name=\""+flashId+"\"";
+		str += "align=\"lef\t\" allowScriptAccess=\"always\" allowFullScreen=\"true\" type=\"application/x-shockwave-flash\" pluginspage=\"https://www.macromedia.com/go/getflashplayer\" FlashVars=\"swfurl=/drawgame/\" />";
+		str += "</object>";
+		document.getElementById('div_flash').innerHTML = str;
+	}
+	//-->
+	function loadEnd() {
+		div_load.style.display = "none";
+	}
+	</SCRIPT>
+
+
+
+</div>
+
+</body>
+</html>
