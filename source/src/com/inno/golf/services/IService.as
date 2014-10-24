@@ -4,6 +4,8 @@ package src.com.inno.golf.services
 	{
 		function send():void
 		function resultHandler():void
-		function faultHandler():void
+		function faultHandler():void;
+		function getResult():Object;	
+	
 	}
 }
