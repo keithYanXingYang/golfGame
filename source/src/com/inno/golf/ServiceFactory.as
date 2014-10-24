@@ -2,6 +2,7 @@ package src.com.inno.golf
 {
 	import flash.events.EventDispatcher;
 	
+	import org.osflash.signals.DeluxeSignal;
 	import org.osflash.signals.Signal;
 	
 	import src.com.inno.golf.controllor.ServiceControllor;
@@ -40,10 +41,10 @@ package src.com.inno.golf
 		
 		
 	
-		public static function getSingalControllor():Signal
+		public static function getSingalControllor():DeluxeSignal
 		{
 		
-			return new Signal();
+			return new DeluxeSignal();
 		}
 	}
 }
